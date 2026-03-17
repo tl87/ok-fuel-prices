@@ -10,7 +10,7 @@ First we need to modify files, then build the container and run it.
 
 In the file `send_email.sh`, please modify the e-mail account field (EMAIL-GOES-HERE). This is the e-mail account that will receive the prices.
 
-In the file `msmtprc`, please modify the `from`, `user` and `password`. We are using Gmail and the sender platform.
+In the file `msmtprc`, please modify the `from`, `user` and `password`. We are using Gmail and the sender platform. Please use an AppPassword from Google for this.
 
 The file `crontab.txt` is for setting how often you want the application to run and send a notification. Default is Monday to Friday, at 07:00 and 15:00. You can change it to fit your needs.
 
