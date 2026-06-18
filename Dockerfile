@@ -2,6 +2,13 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y msmtp ca-certificates bash curl jq cron && apt-get clean
 
+ENV TZ=Europe/Copenhagen
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends tzdata && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone && \
+    rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 COPY OK_Benzin_Priser.sh /app/OK_Benzin_Priser.sh
